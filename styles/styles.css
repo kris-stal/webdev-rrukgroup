@@ -76,6 +76,12 @@ li a {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
+    border-bottom: 0 solid rgba(255, 100, 0, 0); /* Start invisible */
+    transition: border-bottom 0.15s ease; /* Animate border changes */
+}
+
+li a:not(.rrlogo):hover {
+    border-bottom: solid 3px rgb(255, 100, 0)
 }
 
 /* main info box below header */
@@ -118,7 +124,8 @@ li a {
     background-size: 15%;
     background-repeat: no-repeat;
     background-position-y: 50%;
-    background-position-x: 2px;
+    background-position-x: right 10px;
+    padding-right: 25px;
 }
 
 
