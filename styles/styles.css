@@ -10,7 +10,9 @@ div {
 }
 
 
-/* header */
+/* 
+Header
+*/
 .headerSliderImages {
     background-image: url("../images/headerSlider01.jpg");
     background-repeat: no-repeat;
@@ -27,10 +29,11 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    height: 25%;
 }
 
 header .rrlogo a{
-    background-image: url("../images/rrlogo.png");
+    background-image: url("../images/rrlogo2.png");
     background-size: 90%;
     background-repeat: no-repeat;
     background-position: 50%;
@@ -41,7 +44,9 @@ header .rrlogo a{
     margin: 0px;
 }
 
-/* nav bar */
+/* 
+Navigation Bar
+*/
 nav {    
 
 }
@@ -84,7 +89,9 @@ li a:not(.rrlogo):hover {
     border-bottom: solid 3px rgb(255, 100, 0)
 }
 
-/* main info box below header */
+/* 
+First main info box ,below header 
+*/
 .infoBoxMain {
     display: flex;
     flex-direction: column;
@@ -128,11 +135,82 @@ li a:not(.rrlogo):hover {
     padding-right: 25px;
 }
 
-
+/* 
+Footer 
+*/
 footer {
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    height: 20px;
+    height: 150px;
     margin-top: 10px;
     text-align: center;
-    background-color: gray;
+    background-color: rgb(37, 28, 98);
+    color: white;
+}
+
+.footerLogo {
+    background-image: url("../images/rrlogo2.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-position-y: 50%;
+    background-position-x: 50%;
+    width: 10%;
+    text-indent: -99999px;
+    padding: 0px;
+    margin-left: 100px;
+    margin-right: 50px;
+}
+
+/* Footer Info */
+.footerInfo {
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: left;
+    justify-content: center;
+    height: 100%;
+    width: 42.5%;
+    text-decoration: none;
+    line-height: 1px;
+    font-size: 14px;
+}
+
+.footerInfo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.orangeText {
+    color: rgb(255, 100, 0);
+}
+
+
+/* Footer Policies */
+.footerPolicies {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: gray;
+    width: 42.5%;
+}
+
+.footerPolicies .navSeperator {
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
+}
+
+.footerPolicies li a {
+    text-transform: inherit;
+    color: inherit;
+    border-bottom: inherit;
+    transition: color, 0.3s;
+    text-decoration: underline;
+}
+
+.footerPolicies a:not(.navSeperator):hover {
+    color: white;
+    border-bottom: none;
 }
