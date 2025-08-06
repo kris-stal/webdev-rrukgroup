@@ -72,6 +72,7 @@ li {
     flex-direction: row;
     height: 100%;
     align-self: center;
+    position:relative;
 }
 
 li a {
@@ -82,9 +83,59 @@ li a {
     transition: border-bottom 0.15s ease; /* Animate border changes */
 }
 
-li a:not(.rrlogo):hover {
-    border-bottom: solid 3px rgb(255, 100, 0)
+li a.active {
+    border-bottom: 3px solid rgb(255, 100, 0)
 }
+
+li a:not(.rrlogo):hover {
+    border-bottom: 3px solid rgb(255, 100, 0)
+}
+
+/* Hide the dropdown menu by default */
+ul.dropdown-menu {
+    display: none;
+    position: absolute; /* Position relative to its parent */
+    top: 100%;        /* Place directly below the parent item */
+    left: 0;
+    padding: 0;
+    padding-top: 5px;
+    margin: 0;
+    list-style: none;
+    min-width: 150px; /* Minimum width for the dropdown items */
+    z-index: 1000;    /* Ensures the dropdown appears above other elements */
+  }
+
+/* Display the dropdown when its parent li is hovered */
+li:hover > ul.dropdown-menu {
+    display: block;
+  }
+
+  
+/* Optional: Style the dropdown menu items */
+ul.dropdown-menu li {
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    width: 200px;
+  }
+  
+ul.dropdown-menu li a {
+    display: block;
+    padding: 5px 10px;
+    color: white;         
+    text-decoration: none;
+    text-transform: none;
+    font-size: 14px;
+  }
+
+  
+  /* Optional: Add a hover effect for dropdown links */
+  ul.dropdown-menu li a:hover {
+    background-color: rgb(255, 100, 0);
+  }
+
+
+
 
 /* 
 First main info box ,below header 
