@@ -2,6 +2,8 @@ body {
     padding: 0px;
     margin: 0px;
     font-family: "Verdana", Verdana;
+    background-color: rgb(30, 30, 30);
+    color:white;
 }
 
 div {
@@ -9,7 +11,12 @@ div {
     margin: 0px;
 }
 
-/* test */
+.headerOrangeBold
+{
+    color: orange;
+    font-weight: bold;
+    font-size: 20px;
+}
 
 /* 
 Header
@@ -134,8 +141,6 @@ ul.dropdown-menu li a {
   }
 
 
-
-
 /* 
 First main info box ,below header 
 */
@@ -177,7 +182,7 @@ First main info box ,below header
     font-size: 16px;
     text-transform: uppercase;  
     border: none;
-    font-weight: bold;
+    font-weight: normal;
     background-image: url(../images/right-arrow.png);
     background-size: 0%;
     background-repeat: no-repeat;
@@ -196,7 +201,82 @@ First main info box ,below header
 {
     background-color:  rgb(210, 85, 0);
     transition-duration: 0.3s;
-    background-size: 15%;
+    background-size: 10%;
+}
+
+
+/*
+Worked With Logos and map
+*/
+.workedWithInfoText
+{
+    columns: inherit;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    padding: 25px 0px 25px;
+}
+
+.workedWithLogos
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.workedWithLogos img
+{
+    height: 100px;
+    padding: 0 0 25px 100px;
+    width: fit-content;
+}
+
+.workedWithMapContainer
+{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(244, 244, 244)
+}
+
+.workedWithInfoText2
+{   
+    width: 60%;
+    padding-left: 200px;
+}
+
+.workedWithInfoText2 p
+{
+    font-size: 30px;
+    font-weight: bold;
+    color: orange;
+}
+
+.workedWithInfoText2 p2
+{
+    font-size: 22px;
+    color: black;
+}
+
+.workedWithInfoText2 li p
+{
+    font-size: 16px;
+    color: black;
+}
+
+.workedWithMap
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    background-color: pink;
+}
+
+.workedWithMap img
+{
+    width: fit-content;
+    height: fit-content;
 }
 
 
