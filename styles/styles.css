@@ -218,10 +218,97 @@ First main info box ,below header
 }
 
 
+/* 
+Services 
+*/
+.services
+{
+    background-color: rgb(220, 220, 220);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    padding-bottom: 75px;
+}
+
+.services h2 {
+    margin: 0;
+    padding: 0;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    width: 50%;
+}
+
+.service-item a
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0px;
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    transition: background-color 0.3s ease, transition 0.3s ease;
+}
+
+.service-item a:hover
+{
+    background-color: rgb(201, 201, 201);
+}
+
+.service-item 
+{
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.services-grid > .service-item:nth-child(4n)
+{
+    border-right: none;
+}
+
+.services-grid > .service-item:nth-child(n+5)
+{
+    border-bottom: none;
+}
+
+
+.service-item img 
+{
+    width: 50px;
+    height: 50px;
+}
+
+.service-item .read-more
+{
+    font-weight: bold;
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(5px);
+}
+
+.service-item a:hover .read-more 
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 /*
 Worked With Logos 
 */
-
 .workedWith
 {
     background-color: white;
@@ -350,19 +437,92 @@ Contact
     display:flex;
     flex-direction: column;
     width:50%;
+    padding-top: 25px;
 }
 
 .apply
 {
     background-color: rgb(46, 46, 183);
-    padding-right: 650px
+    padding-right: 650px;
+    padding-left: 100px;
+    width: 100%;
 }
 
 .enquiry
 {
     background-color: rgb(229, 170, 61);
-    padding-left: 650px
+    padding-left: 650px;
+    padding-right: 100px;
+    width: 100%;
 }
+
+.apply p, .enquiry p
+{
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.apply p2, .enquiry p2
+{
+    font-size: 18px;
+}
+
+.apply div, .enquiry div
+{
+    padding-top: 25px;
+    align-items: center;
+    width: 100%;
+}
+
+.buttonContact, .buttonApply {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 40px;
+    margin-top: 25px;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;  
+    border: none;
+    font-weight: bold;
+    background-image: url(../images/right-arrow.png);
+    background-size: 0%;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    background-position-x: 95%;
+    padding-left: 25px;
+}
+
+.buttonContact
+{
+    background-color: orange;
+}
+
+.buttonApply 
+{
+    background-color: blue;
+}
+
+.buttonContact a, .buttonApply a
+{
+    text-decoration: inherit;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonContact:hover, .buttonApply:hover
+{
+    background-color:  rgb(210, 85, 0);
+    transition-duration: 0.3s;
+    background-size: 10%;
+}
+
 
 
 /* 
@@ -392,6 +552,7 @@ footer {
     margin-left: 100px;
     margin-right: 50px;
 }
+
 
 /* Footer Info */
 .footerInfo {
