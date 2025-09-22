@@ -4,6 +4,7 @@ body {
     font-family: "Verdana", Verdana;
     background-color: rgb(30, 30, 30);
     color:white;
+    box-sizing: border-box;
 }
 
 div {
@@ -231,6 +232,7 @@ Services
     align-items: center;
     color: black;
     padding-bottom: 75px;
+    text-align: center;
 }
 
 .services h2 {
@@ -249,7 +251,7 @@ Services
     width: 50%;
 }
 
-.service-item a
+.service-item
 {
     display: flex;
     flex-direction: column;
@@ -259,13 +261,14 @@ Services
     text-decoration: none;
     color: inherit;
     background-color: inherit;
-    transition: background-color 0.3s ease, transition 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.service-item a:hover
+.service-item:hover
 {
     background-color: rgb(201, 201, 201);
 }
+
 
 .service-item 
 {
@@ -283,23 +286,57 @@ Services
     border-bottom: none;
 }
 
-
 .service-item img 
 {
     width: 50px;
     height: 50px;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(220, 140, 0);
+    border-radius: 25px;
+    border-width: 10px;
+    border-color: rgb(220, 140, 0);
+    border-style: solid;
+}
+
+.service-item:nth-child(2) img,
+.service-item:nth-child(4) img,
+.service-item:nth-child(5) img,
+.service-item:nth-child(7) img 
+{
+    background-color: blue;
+    border-color: blue;
+}
+
+
+
+
+.service-item h3
+{
+    padding: 0;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.service-item .descriptor
+{
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 10px;
 }
 
 .service-item .read-more
 {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
     transform: translateY(5px);
 }
 
-.service-item a:hover .read-more 
+.service-item:hover .read-more 
 {
     opacity: 1;
     transform: translateY(0);
@@ -446,6 +483,10 @@ Contact
     padding-right: 650px;
     padding-left: 100px;
     width: 100%;
+    background-image: url(../images/apply.jpg);
+    background-size: 100%;
+    background-position-y: -100px;
+    background-repeat: no-repeat;
 }
 
 .enquiry
@@ -454,6 +495,10 @@ Contact
     padding-left: 650px;
     padding-right: 100px;
     width: 100%;
+    background-image: url(../images/contact.jpg);
+    background-size: 100%;
+    background-position-y: -100px;
+    background-repeat: no-repeat;
 }
 
 .apply p, .enquiry p
