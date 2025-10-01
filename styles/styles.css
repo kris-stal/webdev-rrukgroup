@@ -1,3 +1,6 @@
+/* ================================
+   MAIN DEFAULTS, 1920x1080 AND 2560x1440
+================================== */
 body {
     padding: 0;
     margin: 0;
@@ -26,49 +29,104 @@ div {
     font-size: 20px;
 }
 
-/* 
-Header
-*/
+/* ================================
+   HEADER
+================================== */
 .headerSliderImages {
     background-image: url("../images/headerSlider01.jpg");
     background-repeat: no-repeat;
     background-position: 50%;
     background-size:cover;
     width: 100%;
-    height: 30vh;
-    padding: 0;
-    margin: 0;
-}
-
-header {
+    height: 50vh;
     padding: 0;
     margin: 0;
     padding-top: 1rem;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 1rem 0 1rem 0;
+    margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
     text-align: center;
+    height: 3rem;
+    background-color: transparent;
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-header .rrlogo a{
-    background-image: url("../images/rrlogo2.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position-y: 1rem;
-    height: 5rem;
-    width: 5rem;
-    text-indent: -99999px;
+header.scrolled {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 6px rgba;
+}
+
+header.scrolled li a {
+    color: black;
+}
+
+
+/* ================================
+   NAVIGATION BAR
+================================== */
+header nav {
+    width: 100%;
+    display:flex;
+    justify-content: center;
+}
+
+.nav-wrapper
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    list-style-type: none;
     padding: 0;
     margin: 0;
-    margin-left: 0.3rem;
+    gap: 1.5rem;
+    flex: 1 1 auto;
+    max-width: 35%;
 }
 
 
+.rrlogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    width: 5rem;
+    padding: 0;
+    flex-shrink: 0;
+    margin: 0 0.5rem;
+}
 
-/* 
-Navigation Bar
-*/
+.rrlogo a
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.rrlogo img {
+    object-fit: contain;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+}
+
 .navSeperator {
     color: rgb(255, 100, 0);
     font-size: 2rem;
@@ -80,15 +138,13 @@ Navigation Bar
 ul {
     padding: 0;
     margin: 0;
+    width: 100%;
     list-style-type: none;
     display: flex;
     justify-content: center;
-    margin-left: 3.6rem;
 }
 
 li {
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -102,8 +158,8 @@ li a {
     color: white;
     text-transform: uppercase;
     font-weight: bold;
-    border-bottom: 0 solid rgba(255, 100, 0, 0); /* Start invisible */
-    transition: border-bottom 0.15s ease; /* Animate border changes */
+    border-bottom: 0 solid rgba(255, 100, 0, 0);
+    transition: border-bottom 0.15s ease; 
 }
 
 
@@ -111,9 +167,8 @@ li a:not(.rrlogo):hover {
     border-bottom: 3px solid rgb(255, 100, 0)
 }
 
-/* 
-Drop down menu on nav bar items
-*/
+
+/* ========= Navigation Bar drop down menu ========= */
 ul.dropdown-menu {
     display: none;
     position: absolute; 
@@ -121,8 +176,8 @@ ul.dropdown-menu {
     left: 0;
     padding: 0;
     margin: 0;
-    padding-top: 1rem;
-    margin-left: -0.5rem;
+    padding-top: 0.5rem;
+    margin-left: -1rem;
     list-style: none;
     z-index: 1000;
   }
@@ -135,16 +190,16 @@ ul.dropdown-menu li {
     margin: 0;
     padding: 0;
     display: block;
-    width: 12rem;
+    width: 10rem;
   }
   
 ul.dropdown-menu li a {
     display: block;
-    padding: 0.4rem 0.6rem;
+    padding: 0.3rem 0;
     color: white;         
     text-decoration: none;
     text-transform: none;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     background-color: rgb(200, 80, 0);
   }
 
@@ -153,16 +208,16 @@ ul.dropdown-menu li a {
   }
 
 
-/* 
-First main info box ,below header 
-*/
+/* ================================
+   FIRST INFO BOX BELOW HEADER
+================================== */
 .infoBoxMain {
     display: flex;
     flex-direction: column;
     align-self: center;
     text-align: center;
     width: 100%;
-    height: 20vh;
+    height: 30vh;
     background-color: white;
     color: black;
 }
@@ -171,19 +226,18 @@ First main info box ,below header
     display: flex;
     flex-direction: column;
     align-self: center;
-    margin-top: 2rem;
+    margin-top: 4rem;
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     width: 70%;
-
 }
 
 .infoOfferText2 {
     display: flex;
     flex-direction: column;
     align-self: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
     align-items: center;
 }
 
@@ -222,14 +276,14 @@ First main info box ,below header
 }
 
 
-/* 
-Services 
-*/
+/* ================================
+   SERVICES
+================================== */
 .services
 {
     background-color: rgb(240, 230, 215);
     width: 100%;
-    height: 50rem;
+    height: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -338,9 +392,9 @@ Services
 }
 
 
-/*
-Worked With Logos 
-*/
+/* ================================
+   WORKED WITH LOGOS
+================================== */
 .workedWith
 {
     background-color: white;
@@ -352,7 +406,7 @@ Worked With Logos
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
-    padding: 1rem 0 1rem;
+    padding: 4rem 0 2rem;
 }
 
 .workedWithLogos
@@ -370,10 +424,10 @@ Worked With Logos
     width: fit-content;
 }
 
-/*
-Worked With Info and Map
-*/
 
+/* ================================
+   WORKED WITH INFO AND MAP
+================================== */
 .workedWithMapContainer
 {
     display: flex;
@@ -455,101 +509,107 @@ Worked With Info and Map
     height: 100%;
 }
 
-/*
-Contact
-*/
 
-.contact
+/* ================================
+   CONTACT
+================================== */
+.enquiries
 {
     display: flex;
     flex-direction: row;
     height: 15rem;
-}
-
-.contact div
-{
-    display:flex;
-    flex-direction: column;
-    width: 50%;
-    padding-top: 1rem;
-    height: 100%;
-    background-size: 100%;
-    background-position-y: -100px;
-    background-repeat: no-repeat;
+    width: 100%;
+    justify-content: center;
 }
 
 .apply
 {
     background-color: rgb(46, 46, 183);
-    padding: 0 15% 0 2rem;
     background-image: url(../images/apply.jpg);
+    width: 50%;
+    padding: 0 17rem 0 1rem;
 }
 
-.enquiry
+.contact
 {
     background-color: rgb(229, 170, 61);
-    padding: 0 2rem 0 15%;
     background-image: url(../images/contact.jpg);
+    width: 50%;
+    padding: 0 1rem 0 17rem;
 }
 
-.apply p, .enquiry p
+.apply p, .contact p
 {
     font-size: 1.5rem;
     text-transform: uppercase;
     font-weight: bold;
 }
 
-.apply p2, .enquiry p2
+.apply .descriptor, .contact .descriptor
 {
     font-size: 1rem;
+    font-weight: none;
+    text-transform: none;
 }
 
-.enquiry div, .apply div {
+.buttonContact, .buttonApply {
     display: flex;
-    align-self: left;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     margin-top: 2rem;
-    width: 30%;
-    height: 50%;
+    width: 15rem;
+    height: 3rem;
     color: white;
     font-size: 0.8rem;
     text-transform: uppercase;  
     border: none;
     font-weight: bold;
+    text-decoration: none;
     background-image: url(../images/right-arrow.png);
-    background-size: 0%;
+    background-size: 10%;
     background-repeat: no-repeat;
     background-position-y: 50%;
+    background-position-x: 90%;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
 }
 
 .buttonContact
 {
-    background-color: blue;
+    background-color: rgb(40, 40, 172);
+    border-color: rgb(40, 40, 172);
 }
 
 .buttonApply 
 {
-    background-color: orange;
+    background-color: rgb(216, 121, 31);
+    border-color: rgb(216, 121, 31);
 }
 
-.contact a
+
+.buttonContact:hover, .buttonApply:hover
 {
-    width: 100%;
-    height: 100%;
+    transition-duration: 0.2s;
+    background-size: 13%;
 }
 
-.contact a:hover
+.buttonContact:hover
 {
-    background-color:  rgb(210, 85, 0);
-    transition-duration: 0.3s;
-    background-size: 10%;
+    background-color:  rgb(26, 26, 145);
+}
+
+.buttonApply:hover
+{
+    background-color:  rgb(207, 96, 22);
 }
 
 
 
-/* 
-Footer 
-*/
+/* ================================
+   FOOTER
+================================== */
 footer {
     display: flex;
     flex-direction: row;
@@ -599,8 +659,7 @@ footer {
     color: rgb(255, 100, 0);
 }
 
-
-/* Footer Policies */
+/* ========= Footer Policies ========= */
 .footerPolicies {
     display: flex;
     flex-direction: row;
@@ -621,9 +680,30 @@ footer {
     border-bottom: inherit;
     transition: color, 0.3s;
     text-decoration: underline;
+    margin: 1rem
 }
 
 .footerPolicies a:not(.navSeperator):hover {
     color: white;
     border-bottom: none;
 }
+
+
+/* ================================
+   RESPONSIVE STYLING
+================================== */
+
+/* ========= 1440px (Laptops) ========= */
+@media (max-width:1440px) 
+{
+    .headerSliderImages {
+        height: 35vh;
+    }
+
+
+    .infoBoxMain {
+        height: 25vh;
+    }
+}
+
+
