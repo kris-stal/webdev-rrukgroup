@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <div class = "headerSliderImages">
+        <section class = "headerSliderImages">
             <header>
                 <nav>
                     <div class = "nav-wrapper">
@@ -72,7 +72,7 @@
                     </div>
                 </nav>
         </header>
-        </div>
+        </section>
 
         <section class="infoBoxMain">
             <div class="infoOfferText1">
@@ -83,10 +83,15 @@
             <div class="infoOfferText2">
                 We are approved installers for the market leading system manufacturers working only with suppliers that share our passion for quality, reliability and innovation.
             </div>
+
+            <a href="#anchor-services-header" class = "button buttonServices">
+                <span class="button-text"> What We Offer </span>
+                <img src="images/arrow-right.svg" alt ="" class="button-arrow">
+            </a>
         </section>
 
         <section class="services">
-            <h2> Our Services</h2>
+            <h2 id="anchor-services-header"> Our Services</h2>
                 <div class="services-grid">
 
                     <a class="service-item" href=""> 
@@ -167,41 +172,49 @@
                     <p2>R and R Group UK Ltd. specializes in all aspects of internal and external traditional carpentry.</p2>
 
                     <ol> 
-                        <li> 
+                        <li class = "site-item" data-site="01"> 
                             <p> 
                                 <span class="headerOrangeBold"> /01 </span>
-                                    <span class= "headerBlackBold">Bellway Homes </span> <br>
-                                        Thames Gateway site carpentry labour only 87 Houses and associated communal works, Car ports & Refuse stores. Contract value was more than £700,000 </p> </li>
-                        <li> 
+                                <span class= "headerBlackBold">Bellway Homes </span><br>
+                                    Thames Gateway site carpentry labour only 87 Houses and associated communal works, Car ports & Refuse stores. Contract value was more than £700,000 </p> </li>
+                        <li class = "site-item" data-site="02"> 
                             <p> 
                                 <span class="headerOrangeBold"> /02 </span>
-                                    <span class= "headerBlackBold">Crest Nicholson </span> <br>
-                                        Thames Gateway site carpentry labour only 87 Houses and associated communal works, Car ports & Refuse stores. Contract value was more than £700,000 </p> </li>
-                        <li> 
+                                <span class= "headerBlackBold">Crest Nicholson </span><br>
+                                    Decoration of 15 prestigious Town Houses </p> </li>
+                        <li class = "site-item" data-site="03"> 
                             <p> 
                                 <span class="headerOrangeBold"> /03 </span>
-                                    <span class= "headerBlackBold">Bugler Developments </span> <br>
-                                        Decoration of 15 prestigious Town Houses </p> </li>
-                        <li> 
+                                <span class= "headerBlackBold">Bugler Developments </span><br>
+                                    Decoration of 15 prestigious Town Houses </p> </li>
+                        <li class = "site-item" data-site="04"> 
                             <p> 
                                 <span class="headerOrangeBold"> /04 </span>
-                                    <span class= "headerBlackBold">The Woodlarks Bagshot Surrey </span> <br>
-                                        25 Apartments Carpentry/Decorating Bushey Hall Road Watford – Completed September 2020 </p> </li>
-                        <li> 
+                                <span class= "headerBlackBold">The Woodlarks Bagshot Surrey </span> <br>
+                                    25 Apartments Carpentry/Decorating Bushey Hall Road Watford – Completed September 2020 </p> </li>
+                        <li class = "site-item" data-site="05"> 
                             <p> 
                                 <span class="headerOrangeBold"> /05 </span> 
-                                    <span class= "headerBlackBold">Vabel Ltd </span>  <br>
-                                        16 Houses, Carpentry, Bagshot Surrey Commenced August 2020 – ongoing </p> </li>
-                        <li> 
+                                <span class= "headerBlackBold">Vabel Ltd </span><br>
+                                    16 Houses, Carpentry, Bagshot Surrey Commenced August 2020 – ongoing </p> </li>
+                        <li class = "site-item" data-site="06"> 
                             <p> 
                                 <span class="headerOrangeBold"> /06 </span>
-                                    <span class= "headerBlackBold">Wood Lane Hemel Hempstead </span> <br>
-                                        /06 Wood Lane Hemel Hempstead </span> 44 Apartments, Carpentry Hemel Hempstead Commenced October 2020 – ongoing </p> </li>
+                                <span class= "headerBlackBold">Wood Lane Hemel Hempstead </span> <br>
+                                    /06 Wood Lane Hemel Hempstead </span> 44 Apartments, Carpentry Hemel Hempstead Commenced October 2020 – ongoing </p> </li>
                     </ol>
                 </div>
 
                 <div class="workedWithMap"> 
-                    <img src ="/images/workedWithMap.png">
+                    <div class="map"></div>
+                        <img src ="images/workedWithMap.png" alt="map">
+                        <div class="map-pin" data-site="01" style="top:30%; left:50%;"> 1 </div>
+                        <div class="map-pin" data-site="02" style="top:50%; left:25%;"> 2 </div>
+                        <div class="map-pin" data-site="03" style="top:70%; left:20%;"> 3 </div>
+                        <div class="map-pin" data-site="04" style="top:40%; left:30%;"> 4 </div>
+                        <div class="map-pin" data-site="05" style="top:45%; left:40%;"> 5 </div>
+                        <div class="map-pin" data-site="06" style="top:25%; left:35%;"> 6 </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -210,36 +223,39 @@
             <div class = "contact">
                 <p> Discuss Your Project With Us</p>
                 <p class="descriptor"> We work collaboratively with our clients and teams throughout the entire build process.</p>
-                <a href="contactus.html" class = "buttonContact">
-                    Send Enquiry
+                <a href="contactus.html" class = "button buttonContact">
+                    <span class="button-text"> Send Enquiry </span>
+                    <img src="images/arrow-right.svg" alt ="" class="button-arrow">
                 </a>
             </div>
 
             <div class ="apply">
                 <p> Sub contractor application </p>
                 <p class ="descriptor"> If you are looking for a job with us, please complete the form below and we will contact you. </p>
-                <a href="apply.html" class = "buttonApply">
-                    Apply Here
+                <a href="apply.html" class = "button buttonApply">
+                    <span class="button-text">Apply Here</span>
+                    <img src="images/arrow-right.svg" alt ="" class="button-arrow">
                 </a>
             </div>
         </section>
 
         <footer>
-            <div class = "footerLogo"> 
+            <img src = "images/rrlogo2.png" class ="footer-logo" alt ="R&R Logo"> 
+                <div class = "footerInfo">
+                    <p>2025 @ Copyright <strong> RR UK Group</strong></p>
+                    <p><strong> Address </strong> 295a Heathway, Dagenham, RM9 5AQ</p>
+                    <p><strong> Phone </strong> <span class="orangeText"> <a href="tel:07714491649">07714491649</a></span> <strong>Email</strong> <span class="orangeText"><a href="mailto:info@rrukgroup.co.uk">info@rrukgroup.co.uk</a></span></p>
+                </div>
 
-            </div>
-            <div class = "footerInfo">
-                <p>2025 @ Copyright <strong> RR UK Group</strong></p>
-                <p><strong> Address </strong> 295a Heathway, Dagenham, RM9 5AQ</p>
-                <p><strong> Phone </strong> <span class="orangeText"> <a href="tel:07714491649">07714491649</a></span> <strong>Email</strong> <span class="orangeText"><a href="mailto:info@rrukgroup.co.uk">info@rrukgroup.co.uk</a></span></p>
-            </div>
-
-            <div class ="footerPolicies">
-                <ul class = policiesList> 
-                <li><a href="privacy-policy.html">Privacy Policy</a></li> <li class ="navSeperator">/</li> <li><a href ="cookie-policy.html">Cookie Policy</a></li> <li class ="navSeperator">/</li> <li> <a href ="environmental-policy.html">Environmental Policy</a> </li>
-            </ul>
-            </div>
-        
+                <div class ="footerPolicies">
+                    <ul class = policiesList> 
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li> 
+                        <li class ="navSeperator">/</li> 
+                        <li><a href ="cookie-policy.html">Cookie Policy</a></li> 
+                        <li class ="navSeperator">/</li> 
+                        <li> <a href ="environmental-policy.html">Environmental Policy</a></li>
+                    </ul>
+                </div>
         </footer>
     </body>
 </html>
