@@ -3,6 +3,7 @@
 ================================== */
 html{
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
@@ -86,20 +87,8 @@ div {
 
 
 /* ================================
-   HEADER
+   HEADER / NAVIGATION
 ================================== */
-.headerSliderImages {
-    background-image: url("../images/headerSlider01.jpg");
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size:cover;
-    width: 100%;
-    height: 55vh;
-    padding: 0;
-    margin: 0;
-    padding-top: 1rem;
-}
-
 header {
     position: fixed;
     top: 0;
@@ -126,10 +115,7 @@ header.scrolled li a {
     color: black;
 }
 
-
-/* ================================
-   NAVIGATION BAR
-================================== */
+/* ========= Navigation Bar ========= */
 header nav {
     width: 100%;
     display:flex;
@@ -259,9 +245,73 @@ ul.dropdown-menu li a {
     background-color: rgb(200, 80, 0);
   }
 
-  ul.dropdown-menu li a:hover {
+ul.dropdown-menu li a:hover {
     background-color: rgb(255, 100, 0);
-  }
+}
+
+
+/* ================================
+   HEADER SLIDER
+================================== */
+.headerSlider {
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    padding: 0;
+    margin: 0;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-content {
+    background-image: url('../images/headerSlider01.jpg');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-content h3,
+.slider-content h1,
+.slider-content .buttonSlider {
+    margin: 0;
+    position: relative;
+    top: 30%; left: 15%;
+}
+
+.slider-content h3
+{
+    font-size: 1rem;
+    text-transform: uppercase;
+    width: 50%;
+}
+
+.slider-content h1
+{
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    width: 50%;
+}
+
+.slider-man
+{
+    position: absolute;
+    object-fit: contain;
+    width: 27rem;
+    height: 27rem;
+    z-index: 2;
+    right: 10%; bottom: 0%;
+}
+
+
 
 
 /* ================================
@@ -302,20 +352,6 @@ ul.dropdown-menu li a {
     align-self: center;
 }
 
-.infoOfferText2 a
-{
-    text-decoration: inherit;
-    color: inherit;
-}
-
-.infoOfferText2 .buttonWhatWeOffer:hover
-{
-    background-color:  rgb(210, 85, 0);
-    transition-duration: 0.3s;
-    background-size: 10%;
-}
-
-
 /* ================================
    SERVICES
 ================================== */
@@ -339,7 +375,7 @@ ul.dropdown-menu li a {
     font-weight: bold;
 }
 
-#anchor-services-header{
+#anchor-services-header, #anchor-intro{
     scroll-margin-top: 5rem;
 }
 
@@ -656,7 +692,7 @@ footer {
     width: 5rem;
     height: 5rem;
     padding: 0;
-    margin: 0 10rem 0 2rem;
+    margin: 0 2rem 0 17rem;
     object-fit: contain;
 }
 
@@ -670,7 +706,7 @@ footer {
     text-decoration: none;
     line-height: 1px;
     font-size: 0.8rem;
-    margin-right: 30rem;
+    margin-right: 20rem;
 }
 
 .footerInfo a {
@@ -718,14 +754,78 @@ footer {
 /* ========= 1440px (Laptops) ========= */
 @media (max-width:1440px) 
 {
-    .headerSliderImages {
-        height: 35vh;
+    html {
+        font-size: 16px;
+    }
+
+    .nav-left,
+    .nav-right {
+        max-width: 45%;
+    }
+
+    .headerSlider{
+        height: 50vh;
+    }
+
+    .slider-content h3,
+    .slider-content h1,
+    .slider-content .buttonSlider {
+        top: 30%; left: 10%;
+    }
+
+    .slider-content h1 {
+        font-size: 3rem;
+    }
+
+    .slider-man{
+        width: 24rem;
+        height: 24rem;
+    }
+
+    .infoBoxMain{
+        height: 50vh;
+    }
+
+    .infoOfferText1{
+        width: 90%;
+    }
+
+    .infoOfferText2{
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+    .services-grid{
+        width: 90%
+    }
+
+    .service-item{
+        padding-bottom: 1rem;
+    }   
+
+    .workedWithInfoText{
+        padding-top: 2rem;
+    }
+
+    .workedWithLogos img{
+        height: 4rem;
+        padding-bottom: 1rem;
     }
 
 
-    .infoBoxMain {
-        height: 25vh;
+
+    .workedWithInfoText2{
+        padding-left: 5%;
     }
+
+    .workedWithMap{
+        padding-right: 5%;
+    }
+
+
+
+
+
 }
 
 
