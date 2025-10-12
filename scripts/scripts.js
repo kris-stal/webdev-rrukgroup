@@ -1,6 +1,7 @@
 // Listeners
 document.addEventListener("DOMContentLoaded", function () {
     setupMapSync();
+    checkResolution();
 });
 
 window.addEventListener('scroll', function () {
@@ -65,4 +66,22 @@ function setupMapSync(){
             matchingItem.classList.remove('active');
         })
     })
+}
+
+function checkResolution(){
+    let width = window.innerWidth;
+    
+    switch(true) {
+        case width <= 768:
+            const servicesLink = document.querySelector('.services-link');
+            servicesLink.textContent = "Services";
+
+            const contactLink = document.querySelector('.contact-link');
+            contactLink.textContent = "Contact";
+
+            const callLink = document.querySelector('.call-link');
+            callLink.textContent = "Call";
+            break;
+
+    }
 }

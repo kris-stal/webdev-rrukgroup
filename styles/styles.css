@@ -751,7 +751,7 @@ footer {
    RESPONSIVE STYLING
 ================================== */
 
-/* ========= 1440px (Laptops) ========= */
+/* ========= 1920*1080px (Desktop) ========= */
 @media (max-width:1440px) 
 {
     html {
@@ -812,8 +812,6 @@ footer {
         padding-bottom: 1rem;
     }
 
-
-
     .workedWithInfoText2{
         padding-left: 5%;
     }
@@ -821,11 +819,60 @@ footer {
     .workedWithMap{
         padding-right: 5%;
     }
+}
 
+/* ========= 1440px (MacBook Pro / Laptops) ========= */
+@media (max-width:1440px)
+{
+    .slider-content h3,
+    .slider-content h1,
+    .slider-content .buttonSlider {
+        left: 5%;
+    }
 
+    .apply {
+        padding-right: 4rem;
+    }
 
+    .contact{
+        padding-left: 4rem;
+    }
 
-
+    .footer-logo {
+    margin-left: 4rem;
+    }
 }
 
 
+/* ========= 1280x800px (13" Macbook) ========= */
+@media (max-width:1280px)
+{
+    html{
+        font-size: 14px;
+    }
+}
+
+
+/* ========= 1024x768px (iPad Landscape) ========= */
+@media (max-width:1280px)
+{
+    html{
+        font-size: 12px;
+    }
+
+    .footerInfo {
+    margin-right: 15rem;
+    }
+}
+
+/* ========= 768x1024px (iPad Portrait) ========= */
+@media (max-width:768px)
+{
+    .nav-left li:nth-of-type(1), .nav-left li:nth-of-type(2){
+        display:none
+    }
+
+    .footerInfo {
+    margin-right: 15rem;
+    }
+}
