@@ -24,14 +24,14 @@ div {
 {
     color: orange;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 
 .headerBlackBold
 {
     color: rgb(0, 0, 0);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 
 .button {
@@ -570,7 +570,7 @@ ul.dropdown-menu li a:hover {
 .workedWithInfoText2 li p
 {
     display: inline;
-    font-size: 14px;
+    font-size: 1rem;
     color: rgb(102, 102, 102);
     padding: 0;
     margin: 0;
@@ -874,5 +874,22 @@ footer {
 
     .footerInfo {
     margin-right: 15rem;
+    }
+
+    .workedWithLogos img
+    {
+        padding: 0 4rem 2rem 4rem;
+    }
+
+    .workedWithMap
+    {
+        width: 50%;
+        padding-right: 0;
+    }
+
+    .map img{
+        width: 100%;
+        max-width: 500px;
+        height:auto;
     }
 }
