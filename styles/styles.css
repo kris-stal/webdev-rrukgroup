@@ -102,7 +102,7 @@ header {
     justify-content: center;
     width: 100%;
     text-align: center;
-    height: 3rem;
+    height: 4rem;
     background-color: transparent;
     transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -118,6 +118,14 @@ header.scrolled li a {
 
 /* ========= Navigation Bar ========= */
 .mobile-nav-wrapper {
+    display: none;
+}
+
+.mobile-nav{
+    display: none;
+}
+
+.mobile-services-menu{
     display: none;
 }
 
@@ -887,12 +895,45 @@ footer {
         width: 100%;
     }
 
+    .mobile-nav{
+        position: fixed;
+        width:100%;
+        top: 10vh;
+        height: 90vh;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1000;
+    }
+
+    .mobile-main-menu{
+        width: 100%;
+        flex-direction: column;
+        background-color:rgb(213, 213, 213);
+    }
+
     .mobile-nav-wrapper{
         display: flex;
         width: 100%;
         flex-direction: row;
+    }
+
+    .mobile-nav.active, .mobile-main-menu.active {
+    display: flex;
+    } 
+
+    .mobile-main-menu li{
+        width: 100%;
+        height: 100%;
+    }
+
+    .mobile-main-menu a{
+        width: 100%;
+        height: 15vh;
+        display:flex;
         align-items: center;
         justify-content: center;
+        font-size: 3rem;
+        text-transform: capitalize;
     }
 
     .mobile-actions{
@@ -914,7 +955,7 @@ footer {
     }
 
     header{
-        height: 8%;
+        height: 8vh;
         background-color: rgb(255, 255, 255);
         transition: none;
         width: 100%;
@@ -937,10 +978,19 @@ footer {
         margin-right: 1rem;
     }
 
+    .button-mobile-nav-icon {
+    transition: transform 0.1s ease; 
+    }
+
+    .button-mobile-nav-icon.active
+    {   
+        transform: rotate(90deg);
+    }
+
     .buttonNavMenuToggle img {
         object-fit: contain;
-        width: 1rem;
-        height: 1rem;
+        width: 3rem;
+        height: 3rem;
     }
 
     .footerInfo {

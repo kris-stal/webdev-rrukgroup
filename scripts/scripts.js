@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     checkResolution();
 });
 
-window.addEventListener('scroll', function () {
+
+function setupScroll() {
+    window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
     const rrlogo = document.querySelector('.nav-logo');
     if (window.scrollY > 10) {
@@ -15,7 +17,7 @@ window.addEventListener('scroll', function () {
         rrlogo.src = "images/rrlogo2.png";
     }
 });
-
+}
 
 // Functions
 function getCurrentPage(){
@@ -68,11 +70,26 @@ function setupMapSync(){
     })
 }
 
+function mobileNav (){
+    const mobileNavWrapper = document.querySelector('.mobile-nav-wrapper');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const mobileNavButton = document.querySelector('.button.buttonNavMenuToggle');
+    const mobileNavButtonIcon = document.querySelector('.button-mobile-nav-icon');
+
+    mobileNavButton.addEventListener('click', () => {
+        mobileNavWrapper.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        mobileNavButtonIcon.classList.toggle('active');
+    });
+}
+
 function checkResolution(){
     let width = window.innerWidth;
     
     switch(true) {
         case width <= 768:
+            mobileNav();
+
             const servicesLink = document.querySelector('.services-link');
             servicesLink.textContent = "Services";
 
