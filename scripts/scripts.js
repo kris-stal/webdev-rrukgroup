@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     setupMapSync();
     checkResolution();
+    setupScroll();
 });
 
 
@@ -20,19 +21,19 @@ function setupScroll() {
 }
 
 // Functions
-function getCurrentPage(){
-    const currentPath = window.location.pathname;
-    const pageNames = ["/pages", "/index",];
-    let lengths = document.querySelectorAll ('li a')
+// function getCurrentPage(){
+//     const currentPath = window.location.pathname;
+//     const pageNames = ["/pages", "/index",];
+//     let lengths = document.querySelectorAll ('li a')
     
-    for (let i = 0; i < lengths.length; i++)
-    {
-        if (currentPath == pageNames[i])
-        {
+//     for (let i = 0; i < lengths.length; i++)
+//     {
+//         if (currentPath == pageNames[i])
+//         {
 
-        }
-    }
-}
+//         }
+//     }
+// }
 
 function setupMapSync(){
     const pins = document.querySelectorAll('.map-pin')
@@ -75,12 +76,29 @@ function mobileNav (){
     const mobileNav = document.querySelector('.mobile-nav');
     const mobileNavButton = document.querySelector('.button.buttonNavMenuToggle');
     const mobileNavButtonIcon = document.querySelector('.button-mobile-nav-icon');
+    const mobileMainMenu = document.querySelector('.mobile-main-menu');
+    const mobileServicesMenu = document.querySelector('.mobile-services-menu');
+    const mobileServicesToggle = document.querySelector('.mobile-services-toggle');
+    const mobileBackButton = document.querySelector('.mobile-back-button')
 
     mobileNavButton.addEventListener('click', () => {
         mobileNavWrapper.classList.toggle('active');
         mobileNav.classList.toggle('active');
+        mobileMainMenu.classList.toggle('active');
         mobileNavButtonIcon.classList.toggle('active');
     });
+
+    mobileServicesToggle.addEventListener('click', () => {
+        mobileMainMenu.classList.toggle('active');
+        mobileServicesMenu.classList.toggle('active');
+    });
+
+    mobileBackButton.addEventListener('click', () => {
+        mobileMainMenu.classList.toggle('active');
+        mobileServicesMenu.classList.toggle('active');
+    });
+
+
 }
 
 function checkResolution(){
@@ -98,7 +116,11 @@ function checkResolution(){
 
             const callLink = document.querySelector('.call-link');
             callLink.textContent = "Call";
-            break;
 
+            const footerPolicies = document.querySelector('.footerPolicies');
+            footerPolicies.classList.toggle('hide');
+
+            break;
     }
+
 }

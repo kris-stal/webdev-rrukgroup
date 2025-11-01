@@ -109,7 +109,7 @@ header {
 
 header.scrolled {
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 2px 6px rgba;
+    box-shadow: 0 2px 6px;
 }
 
 header.scrolled li a {
@@ -223,7 +223,7 @@ li a {
 }
 
 
-li a:not(.rrlogo):hover {
+li a:not(.rrlogo):hover, .mobile-nav button:hover {
     border-bottom: 3px solid rgb(255, 100, 0)
 }
 
@@ -905,10 +905,12 @@ footer {
         z-index: 1000;
     }
 
-    .mobile-main-menu{
+    .mobile-main-menu, .mobile-services-menu{
+        display: none;
         width: 100%;
         flex-direction: column;
         background-color:rgb(213, 213, 213);
+        height: calc(100vh - 4rem);
     }
 
     .mobile-nav-wrapper{
@@ -917,23 +919,25 @@ footer {
         flex-direction: row;
     }
 
-    .mobile-nav.active, .mobile-main-menu.active {
+    .mobile-nav.active, .mobile-main-menu.active, .mobile-services-menu.active {
     display: flex;
     } 
 
-    .mobile-main-menu li{
+    .mobile-main-menu li, .mobile-services-menu  li{
         width: 100%;
         height: 100%;
     }
 
-    .mobile-main-menu a{
+    .mobile-main-menu a, .mobile-services-menu a , .mobile-nav button{
         width: 100%;
-        height: 15vh;
         display:flex;
         align-items: center;
         justify-content: center;
         font-size: 3rem;
         text-transform: capitalize;
+        font-weight: bold;
+        background-color:rgb(213, 213, 213);
+        border: none;
     }
 
     .mobile-actions{
@@ -1027,5 +1031,43 @@ footer {
     .footerInfo 
     {
     margin-right: 0;
+    }
+}
+
+/* ========= 428x926px (iPhone 13 Pro Max) ========= */
+@media (max-width:430px)
+{
+    .slider-man
+    {
+        width: 15rem;
+        height: 15rem;
+        right: 0;
+    }
+
+    .slider-content h1
+    {
+        font-size: 2rem;
+        width: 100%;
+    }
+
+    .slider-content h3
+    {
+        width: 100%;
+    }
+
+    .workedWithLogos img
+    {
+        height: 3rem;
+        padding: 0 1rem 2rem 1rem;
+    }
+
+    .enquiries
+    {
+        height: 30vh;
+    }
+
+    .footerPolicies li a
+    {
+        font-size: 0.8rem;
     }
 }
