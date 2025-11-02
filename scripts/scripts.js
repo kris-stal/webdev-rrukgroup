@@ -7,15 +7,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function setupScroll() {
-    window.addEventListener('scroll', function () {
+    const headerSlider = document.querySelector('.headerSlider');
     const header = document.querySelector('header');
     const rrlogo = document.querySelector('.nav-logo');
+
+
+    // OTHER PAGES, NO HEADERSLIDER
+    if (!headerSlider)
+    {
+        const listItems = document.querySelectorAll('.nav-wrapper li a')
+        const secondListItems = document.querySelectorAll('.dropdown-menu li a')
+        header.style.backgroundColor = 'white';
+        rrlogo.src = "images/rrlogo.png";
+
+        listItems.forEach(listItem => {
+            listItem.style.color = 'black';
+        })
+
+        secondListItems.forEach(secondListItem => {
+            secondListItem.style.color = 'white';
+        })
+    }
+
+    // HOME PAGE
+    window.addEventListener('scroll', function () {
     if (window.scrollY > 10) {
         header.classList.add('scrolled');
         rrlogo.src = "images/rrlogo.png";
     } else {
         header.classList.remove('scrolled');
-        rrlogo.src = "images/rrlogo2.png";
+        if (headerSlider){
+            rrlogo.src = "images/rrlogo2.png";
+        }
     }
 });
 }
