@@ -112,7 +112,7 @@ header.scrolled {
     box-shadow: 0 2px 6px;
 }
 
-header.scrolled li a {
+header.scrolled li a, header.scrolled li button{
     color: black;
 }
 
@@ -212,7 +212,7 @@ li {
     position: relative;
 }
 
-li a {
+li a, li button {
     text-decoration: none;
     font-size: 1rem;
     color: white;
@@ -222,9 +222,19 @@ li a {
     transition: border-bottom 0.15s ease; 
 }
 
-
-li a:not(.rrlogo):hover, .mobile-nav button:hover {
+li a:not(.rrlogo):hover, li button:hover, .mobile-nav button:hover {
     border-bottom: 3px solid rgb(255, 100, 0)
+}
+
+li button {
+    background: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    font-weight: bold;
 }
 
 
@@ -786,42 +796,108 @@ footer {
 
 .service-info
 {
-    padding-top: 2rem;
-    width: 100vw;
-    height: fit-content;
+    width: 100%;
+    height: 200%;
     display: flex;
     flex-direction: column;
     background-color: white;
     color: black;
+    align-items: center;
 }
 
 .service-header
 {
     font-size: 2rem;
+    padding: 0 5% 0 5%;
 }
 
 .service-text
 {
     font-size: 1.5rem;
+    padding: 0 5% 0 5%;
 }
 
 .service-pictures {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
 .service-pictures img
 {
-    display: flex;
-    height: fit-content;
-    width: 100%;
+    width: 90%;
     margin-bottom: 1rem;
 }
 
+/* ================================
+   CONTACT PAGE
+================================== */
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: black;
+    font-size: 2rem;
+    align-items: center;
+}
+
+.contact-header {
+    margin: 0;
+    padding: 5% 0 0 5%;
+    font-size: 3rem;
+    align-self: flex-start;
+
+}
+
+.contact-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 90%;
+    height: 100%;
+    align-items: center;
+}
+
+.contact-page label {
+    display: block;
+    align-self: flex-start;
+}
+
+.contact-page input, .contact-page textarea
+{
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 4rem;
+    box-sizing: border-box;
+    margin-bottom: 5%;
+    background-color: rgb(233, 233, 233);
+}   
+
+.contact-page textarea{
+    height: 20rem;
+    resize: vertical;
+}
+
+.submit {
+    background-color: orange;
+}
+
+.contact-map {
+    background-color: white;
+    color: black;
+    align-content: center;
+    padding-bottom: 2rem;
+} 
+
+.contact-map iframe {
+    display: block;
+    margin: 0 auto;
+    justify-content: center;
+}
 
 /* ================================
    RESPONSIVE STYLING

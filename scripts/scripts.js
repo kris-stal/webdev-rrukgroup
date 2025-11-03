@@ -3,9 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
     setupMapSync();
     checkResolution();
     setupScroll();
+
+    document.querySelector('.contact-form').addEventListener("submit", function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+
+    console.log(Object.fromEntries(formData));
+})
 });
 
 
+// Functions
 function setupScroll() {
     const headerSlider = document.querySelector('.headerSlider');
     const header = document.querySelector('header');
@@ -17,11 +25,13 @@ function setupScroll() {
     {
         const listItems = document.querySelectorAll('.nav-wrapper li a')
         const secondListItems = document.querySelectorAll('.dropdown-menu li a')
+        const navButton = document.querySelector('.services-toggle')
         header.style.backgroundColor = 'white';
         rrlogo.src = "images/rrlogo.png";
 
         listItems.forEach(listItem => {
             listItem.style.color = 'black';
+            navButton.style.color = 'black';
         })
 
         secondListItems.forEach(secondListItem => {
@@ -43,7 +53,6 @@ function setupScroll() {
 });
 }
 
-// Functions
 // function getCurrentPage(){
 //     const currentPath = window.location.pathname;
 //     const pageNames = ["/pages", "/index",];
@@ -147,3 +156,4 @@ function checkResolution(){
     }
 
 }
+
