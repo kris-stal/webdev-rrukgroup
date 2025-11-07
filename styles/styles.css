@@ -900,6 +900,26 @@ footer {
 }
 
 /* ================================
+   CONTACT PAGE
+================================== */
+.policy-header {    
+    display: flex;
+    align-self: center;
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 239, 209);
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.policy-list {
+    font-size: 1.5rem;
+    list-style-type: decimal;
+}
+
+/* ================================
    RESPONSIVE STYLING
 ================================== */
 
