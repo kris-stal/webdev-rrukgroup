@@ -10,10 +10,9 @@ body {
     padding: 0;
     margin: 0;
     font-family: "Verdana", Verdana;
-    background-color: rgb(30, 30, 30);
+    background-color: white;
     color:white;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 
 div {
@@ -910,21 +909,67 @@ footer {
 /* ================================
    CONTACT PAGE
 ================================== */
-.policy-header {    
+.page-container {
+    background-color: white;
+    color: black;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin: auto;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.text-header {    
     align-self: center;
     font-size: 3rem;
-    margin: 0;
-    padding: 0;
     background-color: rgb(255, 239, 209);
     width: 100%;
     text-align: center;
-    justify-content: center;
+    padding: 2rem 0 2rem 0;
+    margin: 0 0 2rem 0;
 }
 
-.policy-list {
-    font-size: 1.5rem;
-    list-style-type: decimal;
+.text-subheader {
+    font-size: 2rem;
+    width: 70%;
+    margin: auto;
+    padding: 3rem 5% 0.5rem 5%;
+}
+
+.text-container {
+    width: 70%;
+    padding: 0;
+    margin: auto;
+}
+
+.text-container.policies-director{
+    font-size: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    font-weight: bold;
+}
+.text-container span
+{
+    display: block;
+}
+
+.text-list {
+    width: 70%;
+    margin: auto;
+    padding: 0 5% 2rem 5%;
+    line-height: 3rem;
+}
+
+.text-list li {
+    margin: 0;
+    padding: 0;
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: inside;
 }
 
 /* ================================
