@@ -4,7 +4,7 @@ services:
     container_name: nginx
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./nginx/sites:/etc/nginx/conf.d:ro
+      - ./nginx/webconf:/etc/nginx/conf.d:ro
       - ./nginx/webfiles:/var/www
     networks:
       - tunnel
