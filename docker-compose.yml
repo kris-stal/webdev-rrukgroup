@@ -9,6 +9,12 @@ services:
     networks:
       - tunnel
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
 
   cloudflared:
     image: cloudflare/cloudflared:latest
