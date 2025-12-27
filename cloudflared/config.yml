@@ -1,0 +1,9 @@
+tunnel: e0e2c8ba-9f0b-42db-b778-335599646630
+credentials-file: /etc/cloudflared/credentials.json
+
+ingress:
+  - hostname: rrukgroup.co.uk
+    service: http://nginx:80
+  - hostname: www.rrukgroup.co.uk
+    service: http://nginx:80
+  - service: http_status:404
