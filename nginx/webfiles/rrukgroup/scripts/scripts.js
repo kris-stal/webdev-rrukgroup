@@ -2,8 +2,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM loaded");
     setupMapSync();
-    checkResolution();
     setupScroll();
+    setTimeout(checkResolution, 50);
 
     const contactForm = document.querySelector('.contact-form');
     if (contactForm)
