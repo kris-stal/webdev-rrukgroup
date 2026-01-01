@@ -1,7 +1,7 @@
 ## R&R UK Group Website: https://rrukgroup.co.uk
 
-A minimal JavaScript usage for performance, built entirely from HTML, CSS and JavaScript, with JavaScript being used only when necessary for styling for optimization.
-This project was a part of my internship to replace the previously high cost website and upkeep of hosting.
+A construction company website built entirely from HTML, CSS and JavaScript, with JavaScript being kept to a minimum for optimization.
+This project was a part of my internship to replace the previously high cost website and upkeep of hosting via a third party.
 
 ## Features
 - Clean, minimal and efficient design through HTML and CSS
@@ -18,7 +18,7 @@ This project was a part of my internship to replace the previously high cost web
 ## Check out my project
 This project can be cloned and run locally, tested by opening index.html in your browser.
 Note that cloudflared tunneling will be missing entirely, so the website will just be hosted locally.
-Secrets are not exposed on this repo (credentials.json for cloudflared tunnel token).
+Secrets such as cloudflare token are hidden from this repo.
 
 ## What's next
 - Implement website information updates (site map update, new projects) when they are recieved
