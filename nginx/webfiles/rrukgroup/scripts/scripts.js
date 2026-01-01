@@ -4,12 +4,15 @@ document.addEventListener("DOMContentLoaded", function () {
     checkResolution();
     setupScroll();
 
-    document.querySelector('.contact-form').addEventListener("submit", function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-
-    console.log(Object.fromEntries(formData));
-})
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm)
+    {
+        contactForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            console.log(Object.fromEntries(formData));
+        })
+    }
 });
 
 
