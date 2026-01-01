@@ -107,7 +107,7 @@ function setupMapSync(){
     })
 }
 
-function mobileNav (){
+function setupMobileNav (){
     const mobileNavWrapper = document.querySelector('.mobile-nav-wrapper');
     const mobileNav = document.querySelector('.mobile-nav');
     const mobileNavButton = document.querySelector('.button.buttonNavMenuToggle');
