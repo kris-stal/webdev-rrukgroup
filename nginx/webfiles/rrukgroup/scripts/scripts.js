@@ -31,7 +31,7 @@ function setupScroll() {
         const secondListItems = document.querySelectorAll('.dropdown-menu li a')
         const navButton = document.querySelector('.services-toggle')
         header.style.backgroundColor = 'white';
-        rrlogo.src = "images/rrlogo.png";
+        rrlogo.src = "/images/rrlogo.png/";
 
         listItems.forEach(listItem => {
             listItem.style.color = 'black';
@@ -47,11 +47,11 @@ function setupScroll() {
     window.addEventListener('scroll', function () {
     if (window.scrollY > 10) {
         header.classList.add('scrolled');
-        rrlogo.src = "images/rrlogo.png";
+        rrlogo.src = "/images/rrlogo.png/";
     } else {
         header.classList.remove('scrolled');
         if (headerSlider){
-            rrlogo.src = "images/rrlogo2.png";
+            rrlogo.src = "/images/rrlogo2.png/";
         }
     }
 });
