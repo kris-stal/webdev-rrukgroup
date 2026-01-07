@@ -1,15 +1,19 @@
 // Listeners
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM loaded");
     setupMapSync();
-    checkResolution();
     setupScroll();
+    setTimeout(checkResolution, 50);
 
-    document.querySelector('.contact-form').addEventListener("submit", function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-
-    console.log(Object.fromEntries(formData));
-})
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm)
+    {
+        contactForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            console.log(Object.fromEntries(formData));
+        })
+    }
 });
 
 
@@ -27,7 +31,7 @@ function setupScroll() {
         const secondListItems = document.querySelectorAll('.dropdown-menu li a')
         const navButton = document.querySelector('.services-toggle')
         header.style.backgroundColor = 'white';
-        rrlogo.src = "images/rrlogo.png";
+        rrlogo.src = "/images/rrlogo.png";
 
         listItems.forEach(listItem => {
             listItem.style.color = 'black';
@@ -43,11 +47,11 @@ function setupScroll() {
     window.addEventListener('scroll', function () {
     if (window.scrollY > 10) {
         header.classList.add('scrolled');
-        rrlogo.src = "images/rrlogo.png";
+        rrlogo.src = "/images/rrlogo.png";
     } else {
         header.classList.remove('scrolled');
         if (headerSlider){
-            rrlogo.src = "images/rrlogo2.png";
+            rrlogo.src = "/images/rrlogo2.png";
         }
     }
 });
@@ -103,7 +107,7 @@ function setupMapSync(){
     })
 }
 
-function mobileNav (){
+function setupMobileNav (){
     const mobileNavWrapper = document.querySelector('.mobile-nav-wrapper');
     const mobileNav = document.querySelector('.mobile-nav');
     const mobileNavButton = document.querySelector('.button.buttonNavMenuToggle');
@@ -113,47 +117,62 @@ function mobileNav (){
     const mobileServicesToggle = document.querySelector('.mobile-services-toggle');
     const mobileBackButton = document.querySelector('.mobile-back-button')
 
+    if (!mobileNavWrapper || !mobileNavButton || !mobileMainMenu || !mobileServicesMenu) {
+        console.log("Mobile nav elements not found, aborting setup");
+        return;
+    }
+    
+    console.log("Setting up mobile nav");
+
+    // Toggle main mobile nav
     mobileNavButton.addEventListener('click', () => {
+        console.log("Mobile nav button clicked");
         mobileNavWrapper.classList.toggle('active');
         mobileNav.classList.toggle('active');
         mobileMainMenu.classList.toggle('active');
-        mobileNavButtonIcon.classList.toggle('active');
+        if (mobileNavButtonIcon) mobileNavButtonIcon.classList.toggle('active');
     });
 
-    mobileServicesToggle.addEventListener('click', () => {
-        mobileMainMenu.classList.toggle('active');
-        mobileServicesMenu.classList.toggle('active');
-    });
+    // Show services submenu
+    if (mobileServicesToggle) {
+        mobileServicesToggle.addEventListener('click', () => {
+            console.log("Mobile services clicked");
+            mobileMainMenu.classList.toggle('active');
+            mobileServicesMenu.classList.toggle('active');
+        });
+    }
 
-    mobileBackButton.addEventListener('click', () => {
-        mobileMainMenu.classList.toggle('active');
-        mobileServicesMenu.classList.toggle('active');
-    });
-
-
+    // Back button in services menu
+    if (mobileBackButton) {
+        mobileBackButton.addEventListener('click', () => {
+            console.log("Mobile back button clicked");
+            mobileMainMenu.classList.toggle('active');
+            mobileServicesMenu.classList.toggle('active');
+        });
+    }
 }
 
 function checkResolution(){
-    let width = window.innerWidth;
+    const width = window.innerWidth;
+    console.log("Window width:", width);
     
-    switch(true) {
-        case width <= 768:
-            mobileNav();
+    if (width <= 768) {
+        console.log("Mobile resolution detected");
 
-            const servicesLink = document.querySelector('.services-link');
-            servicesLink.textContent = "Services";
+        // const servicesLink = document.querySelector('.services-link');
+        // if (servicesLink) servicesLink.textContent = "Services";
 
-            const contactLink = document.querySelector('.contact-link');
-            contactLink.textContent = "Contact";
+        // const contactLink = document.querySelector('.contact-link');
+        // if (contactLink) contactLink.textContent = "Contact";
 
-            const callLink = document.querySelector('.call-link');
-            callLink.textContent = "Call";
+        // const callLink = document.querySelector('.call-link');
+        // if (callLink) callLink.textContent = "Call";
 
-            const footerPolicies = document.querySelector('.footerPolicies');
-            footerPolicies.classList.toggle('hide');
+        const footerPolicies = document.querySelector('.footerPolicies');
+        if (footerPolicies) footerPolicies.classList.add('hide'); // safer than toggle
 
-            break;
+        // Activate mobile nav
+        setupMobileNav();
     }
-
 }
 

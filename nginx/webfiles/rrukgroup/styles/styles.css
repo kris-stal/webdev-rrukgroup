@@ -1124,6 +1124,7 @@ footer {
         display: flex;
         width: 100%;
         flex-direction: row;
+        align-items: center;
     }
 
     .mobile-nav.active, .mobile-main-menu.active, .mobile-services-menu.active {
@@ -1149,9 +1150,9 @@ footer {
 
     .mobile-actions{
         display: flex;
-        width: 90%;
-        justify-content: flex-end;
         align-items: center;
+        gap: 0.5rem;
+        margin-left: auto;
     }
 
     .nav-menu-toggle img {
@@ -1174,19 +1175,14 @@ footer {
 
     .buttonMobileEnquire
     {
-        width: 15rem;   
-        margin-top: 0;
-        font-size: 15px;
-        height: 4rem;
-        margin-right: 5%;
+        white-space: nowrap;
+        padding: 0 1rem;
     }
 
     .buttonNavMenuToggle
     {
         width: 4rem;
-        margin-top: 0;
         height: 4rem;
-        margin-right: 1rem;
     }
 
     .button-mobile-nav-icon {
@@ -1210,6 +1206,7 @@ footer {
 
     .workedWithLogos img
     {
+        height: 2rem;
         padding: 0 4rem 2rem 4rem;
     }
 
