@@ -1,19 +1,31 @@
-// Listeners
+// Listeners and calling functions
 document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM loaded");
     setupMapSync();
     setupScroll();
     setTimeout(checkResolution, 50);
 
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm)
+    const form = document.getElementById('contact-form');
+    if (form)
     {
-        contactForm.addEventListener("submit", function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            console.log(Object.fromEntries(formData));
-        })
-    }
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        
+        try {
+            const response = await fetch('https://formgrid.dev/api/f/l77ednhn', {
+                method: 'POST',
+                body: formData
+            });
+            
+            if (response.ok) {
+                alert('Form submitted successfully!');
+                form.reset();
+            }
+        } catch (error) {
+            alert('Error submitting form');
+        }
+    });} 
 });
 
 
@@ -56,20 +68,6 @@ function setupScroll() {
     }
 });
 }
-
-// function getCurrentPage(){
-//     const currentPath = window.location.pathname;
-//     const pageNames = ["/pages", "/index",];
-//     let lengths = document.querySelectorAll ('li a')
-    
-//     for (let i = 0; i < lengths.length; i++)
-//     {
-//         if (currentPath == pageNames[i])
-//         {
-
-//         }
-//     }
-// }
 
 function setupMapSync(){
     const pins = document.querySelectorAll('.map-pin')
@@ -155,24 +153,5 @@ function setupMobileNav (){
 function checkResolution(){
     const width = window.innerWidth;
     console.log("Window width:", width);
-    
-    if (width <= 768) {
-        console.log("Mobile resolution detected");
-
-        // const servicesLink = document.querySelector('.services-link');
-        // if (servicesLink) servicesLink.textContent = "Services";
-
-        // const contactLink = document.querySelector('.contact-link');
-        // if (contactLink) contactLink.textContent = "Contact";
-
-        // const callLink = document.querySelector('.call-link');
-        // if (callLink) callLink.textContent = "Call";
-
-        const footerPolicies = document.querySelector('.footerPolicies');
-        if (footerPolicies) footerPolicies.classList.add('hide'); // safer than toggle
-
-        // Activate mobile nav
-        setupMobileNav();
-    }
 }
 
